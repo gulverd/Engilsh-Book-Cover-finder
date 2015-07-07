@@ -84,10 +84,11 @@
 		</div>
 	</div>
 	<div class="col-md-12">
+	
 		<?php if(isset($_POST['submit'])){
 			$isbn_entry = $_POST['isbn'];
 
-			$query = "SELECT * FROM book WHERE isbn = '$isbn_entry'";
+			$query = "SELECT * FROM book WHERE isbn = '$isbn_entry' or names like '%$isbn_entry%'";
 			$run   = mysqli_query($conn,$query);
 
 			while($row = mysqli_fetch_array($run)){
@@ -101,6 +102,7 @@
 				$author= $row['author'];
 				$publisher = $row['publisher'];
 				//echo $isbn . ' ' . $name . ' ' . $desc . ' ' . $image;
+				echo '<div class="container" id="resulti">';
 				echo '<div class="col-md-12">';
 					echo '<div class="col-md-6">';
 						echo $image;
@@ -131,12 +133,14 @@
 						echo '</div>';
 					echo '</div>';
 				echo '</div>';
+				echo '</div>';
 
 
 			}
 		}
 		?>
 	</div>
+
 </div>
 
 <footer class="site-footer">

@@ -1,6 +1,11 @@
 body{
 	background-color: #FAFAFA;
 }
+#resulti{
+	margin-bottom: 20px;
+	margin-top: 20px;
+	
+}
 @font-face{
 	font-family: bpg_nino_mtavruli_bold;
 	src: url(fonts/bpg_nino_mtavruli_bold.ttf);
